@@ -1,35 +1,23 @@
-import {useState} from 'react'
-const App = () =>{
-    const [value, setValue] = useState({nombre:'',apellido:'', select : '0'})
-    const handleChange = (e) => {
-        console.log(e.target.name)
-        setValue((satate)=>({
-            ...satate,
-            [e.target.name]: e.target.value  
-        }))
-    }
-    console.log(value)
+ const LI = (props) =>{ 
+    
+    return(
+        <li>{props.children}</li>
+    )
+           
+ }
+
+const App = () => {
+
     return (
         <div>
-        { value.nombre.length < 5 ? <span>Longitud minima de 5</span> : null}
-            <input  type="text" name="nombre" value={value.nombre} onChange={handleChange} />
-            <input type= "text" name="apellido" value={value.apellido} onChange={handleChange}/>
-        
-
-          
-        <select value={value.select} name='select' onChange={handleChange}>
-                <option value='0'>-- Seleccione un rol --</option>
-                <option value='1'>admin</option>
-                <option value='2'>cliente</option>
-                <option value='3'>vendedor</option>
-        </select>
-
-
+        <h1>HOLA MUNDO - REACT</h1>
+        <ul>
+            <LI>Este archivo renombralo como quieras pero no como App.js</LI>
+            <LI>Porfavor renombra cada archivo que quieras probar ejemplo: useState.js por App.js </LI>
+            <LI>Abre la consola del navegador, para poder observar ciertos valores</LI>        
+        </ul>
         </div>
-       
-
-        
     )
 }
 
-export default App
+export default App;
